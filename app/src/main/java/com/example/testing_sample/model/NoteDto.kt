@@ -15,6 +15,10 @@ data class NoteDto(
     val timestamp: String
 ) : Parcelable {
 
+    companion object {
+        val empty = NoteDto(id = 0, title = "", content = "", timestamp = "")
+    }
+
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
         if (javaClass != other?.javaClass) return false
