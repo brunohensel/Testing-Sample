@@ -5,19 +5,15 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import kotlinx.android.parcel.Parcelize
 
-@Entity(tableName = "notes")
 @Parcelize
+@Entity(tableName = "notes_table")
 data class NoteDto(
     @PrimaryKey(autoGenerate = true)
     var id: Int = 0,
-    val title: String,
-    val content: String,
-    val timestamp: String
+    var title: String,
+    var content: String,
+    var timestamp: String
 ) : Parcelable {
-
-    companion object {
-        val empty = NoteDto(id = 0, title = "", content = "", timestamp = "")
-    }
 
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
